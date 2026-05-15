@@ -1,0 +1,35 @@
+[project]
+name = "familyfindmy"
+requires-python = ">3.10.0"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+select = [
+    # Pyflakes
+    "F",
+    # Pycodestyle
+    "E",
+    "W",
+]
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+junit_family = "xunit1"
+norecursedirs = [
+    ".git",
+    ".venv",
+    "instance",
+    ".pytest_cache",
+    "bin",
+    "lib",
+    "include",
+]
+
+[tool.coverage.run]
+omit = [
+    "*/tests/*",
+    "*/.venv/*",
+]
