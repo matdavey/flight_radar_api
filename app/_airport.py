@@ -6,7 +6,7 @@ from app import _config as config, _login as login
 router = APIRouter()
 
 
-@router.get("/get_arrivals", tags=["airport"])
+@router.get("/get_airports", tags=["airport"])
 def get_airports(country: str):
     flight_radar_client = login.get_client()
     return flight_radar_client.airports(country)
